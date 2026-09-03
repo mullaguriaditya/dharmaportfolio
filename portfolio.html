@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Dharma Teja | Cybersecurity Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            background: #03111b;
+            color: #eef7fb;
+            line-height: 1.6
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(3, 17, 27, .94);
+            border-bottom: 1px solid #173241;
+            backdrop-filter: blur(10px)
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .brand span {
+            color: #67e65a
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            color: #c4d2d8;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #67e65a
+        }
+
+        .hero {
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            align-items: center;
+            gap: 50px;
+            padding: 80px 5%;
+            background: radial-gradient(circle at 80% 35%, rgba(103, 230, 90, .14), transparent 28%), linear-gradient(#03111b, #041621)
+        }
+
+        .hello {
+            color: #67e65a;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+            line-height: .95;
+            letter-spacing: -2px;
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        h1 span {
+            color: #67e65a
+        }
+
+        .role {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: .85rem;
+            color: #cbd8dd;
+            margin-bottom: 18px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .hero p {
+            max-width: 620px;
+            color: #9eb2bc;
+            font-size: 1.05rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: 1px solid #35515d;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            border-color: #67e65a;
+            color: #67e65a;
+            transform: translateY(-2px);
+        }
+
+        .primary {
+            background: #67e65a;
+            color: #04110b;
+            border-color: #67e65a
+        }
+
+        .primary:hover {
+            background: #55d648;
+            color: #04110b;
+            box-shadow: 0 6px 20px rgba(103, 230, 90, 0.3);
+        }
+
+        .profile-wrap {
+            width: min(400px, 90vw);
+            aspect-ratio: 1;
+            margin: auto;
+            padding: 8px;
+            border-radius: 50%;
+            border: 2px solid #67e65a;
+            box-shadow: 0 0 35px rgba(103, 230, 90, .25);
+            position: relative;
+            background: rgba(7, 26, 37, 0.6);
+        }
+
+        .profile-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .profile-wrap:after {
+            content: "🔒";
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #071a20;
+            border: 2px solid #67e65a;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            padding: 85px 0
+        }
+
+        .section-title {
+            margin-bottom: 35px
+        }
+
+        .section-title small {
+            color: #67e65a;
+            letter-spacing: 3px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            margin-top: 8px;
+            font-weight: 800;
+        }
+
+        .dark {
+            background: #061721
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px
+        }
+
+        .about-grid>p {
+            color: #9eb2bc;
+            font-size: 1.05rem;
+        }
+
+        .quick {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+
+        .card {
+            background: #071a25;
+            border: 1px solid #183543;
+            border-radius: 12px;
+            padding: 22px
+        }
+
+        .card p {
+            color: #9eb2bc
+        }
+
+        .skills,
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .skill-list {
+            list-style: none;
+            margin-top: 10px
+        }
+
+        .skill-list li {
+            padding: 7px 0;
+            border-bottom: 1px solid #132d39;
+            color: #b8c7ce
+        }
+
+        .project {
+            transition: .2s
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #67e65a
+        }
+
+        .tag {
+            color: #67e65a;
+            font-size: .86rem;
+            margin: 8px 0 14px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .project ul {
+            margin: 14px 0 0 18px;
+            color: #9eb2bc
+        }
+
+        .project>p {
+            color: #9eb2bc
+        }
+
+        /* Certificates Styles */
+        .featured-certs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 28px;
+            margin-bottom: 45px;
+        }
+
+        .cert-card-featured {
+            background: #071a25;
+            border: 1px solid #183543;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cert-card-featured:hover {
+            transform: translateY(-6px);
+            border-color: #67e65a;
+            box-shadow: 0 12px 30px rgba(103, 230, 90, 0.15);
+        }
+
+        .cert-image-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1.4;
+            background: #030e15;
+            overflow: hidden;
+            border-bottom: 1px solid #183543;
+            cursor: pointer;
+        }
+
+        .cert-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.4s ease;
+        }
+
+        .cert-card-featured:hover .cert-image-wrap img {
+            transform: scale(1.04);
+        }
+
+        .cert-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(3, 17, 27, 0.75);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cert-card-featured:hover .cert-overlay {
+            opacity: 1;
+        }
+
+        .btn-preview {
+            background: #67e65a;
+            color: #04110b;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transform: translateY(10px);
+            transition: transform 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .cert-card-featured:hover .btn-preview {
+            transform: translateY(0);
+        }
+
+        .cert-info {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .cert-issuer {
+            color: #67e65a;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .cert-date {
+            color: #78909a;
+            font-size: 0.85rem;
+        }
+
+        .cert-info h3 {
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+            color: #eef7fb;
+            font-weight: 700;
+        }
+
+        .cert-desc {
+            color: #9eb2bc;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            margin-bottom: 16px;
+        }
+
+        .cert-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: auto;
+        }
+
+        .badge {
+            background: rgba(103, 230, 90, 0.1);
+            color: #67e65a;
+            border: 1px solid rgba(103, 230, 90, 0.3);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .cert-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-sm {
+            padding: 9px 16px;
+            font-size: 0.88rem;
+        }
+
+        .subheading-certs {
+            font-size: 1.2rem;
+            color: #cbd8dd;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+
+        .cert {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px
+        }
+
+        .cert-subtext {
+            font-size: 0.85rem;
+            color: #78909a;
+            margin-top: 2px;
+        }
+
+        .cert span {
+            color: #67e65a;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .timeline {
+            border-left: 2px solid #264653;
+            padding-left: 30px;
+            margin-left: 8px;
+            display: grid;
+            gap: 30px
+        }
+
+        .edu {
+            position: relative
+        }
+
+        .edu:before {
+            content: "";
+            position: absolute;
+            left: -38px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #67e65a;
+            border-radius: 50%
+        }
+
+        .edu small {
+            color: #67e65a
+        }
+
+        .edu p {
+            color: #9eb2bc
+        }
+
+        .contact-box {
+            background: #67e65a;
+            color: #04110b;
+            border-radius: 16px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center
+        }
+
+        .contact-links {
+            display: grid;
+            gap: 10px
+        }
+
+        .contact-links a {
+            padding: 11px 14px;
+            border: 1px solid rgba(4, 17, 11, .3);
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            background: rgba(4, 17, 11, 0.08);
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px;
+            color: #78909a
+        }
+
+        /* Modal Lightbox Styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(3, 17, 27, 0.88);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #071a25;
+            border: 1px solid #183543;
+            border-radius: 16px;
+            width: min(920px, 95vw);
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid #183543;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 1.15rem;
+            color: #eef7fb;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: #78909a;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: #67e65a;
+        }
+
+        .modal-body {
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #030e15;
+        }
+
+        .modal-body img {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid #183543;
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        @media(max-width:850px) {
+            .nav-links {
+                display: none
+            }
+
+            .hero,
+            .about-grid,
+            .contact-box {
+                grid-template-columns: 1fr
+            }
+
+            .hero {
+                text-align: center
+            }
+
+            .hero p {
+                margin: auto
+            }
+
+            .hero-buttons {
+                justify-content: center
+            }
+
+            .skills,
+            .projects,
+            .featured-certs,
+            .cert-grid {
+                grid-template-columns: 1fr
+            }
+
+            .profile-wrap {
+                max-width: 310px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav><a class="brand" href="#home">DHARMA TEJA <span>NUNNA</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div>
+                <div class="hello">👋 Hello, I'm</div>
+                <h1>DHARMA TEJA <span>NUNNA</span></h1>
+                <div class="role">Aspiring Cybersecurity Professional</div>
+                <p>Computer Science and Engineering student interested in cybersecurity, ethical hacking, networking,
+                    programming and secure systems.</p>
+                <div class="hero-buttons">
+                    <a class="btn primary" href="cvdharma.pdf" download="cvdharma.pdf" onclick="downloadCV(event)">📥
+                        Download CV</a>
+                    <a class="btn" href="#projects">View My Projects</a>
+                    <a class="btn" href="#certificates">View Certificates</a>
+                    <a class="btn" href="mailto:nunnadharmateja07@gmail.com">Let's Connect</a>
+                    <a class="btn" href="https://github.com/dharma1413" target="_blank">GitHub ↗</a>
+                    <a class="btn" href="https://www.linkedin.com/in/dharma-teja-nunna/" target="_blank">LinkedIn ↗</a>
+                </div>
+            </div>
+            <div class="profile-wrap">
+                <img src="profile.jpeg" alt="Dharma Teja Nunna">
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="section-title"><small>ABOUT ME</small>
+                    <h2>Learning, building and securing.</h2>
+                </div>
+                <div class="about-grid">
+                    <p>I am a Computer Science and Engineering student at Lovely Professional University. I enjoy
+                        learning new technologies and applying them through practical projects, especially in
+                        cybersecurity, networking, Python, databases and web development.</p>
+                    <div class="quick">
+                        <div class="card">
+                            <h3>🎓 CSE Student</h3>
+                            <p>Lovely Professional University</p>
+                        </div>
+                        <div class="card">
+                            <h3>🎯 Problem Solver</h3>
+                            <p>Analytical thinking</p>
+                        </div>
+                        <div class="card">
+                            <h3>💻 Learner</h3>
+                            <p>Always improving</p>
+                        </div>
+                        <div class="card">
+                            <h3>🛡️ Security Focused</h3>
+                            <p>Ethical & responsible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="dark">
+            <div class="container">
+                <div class="section-title"><small>SKILLS</small>
+                    <h2>Technical toolkit</h2>
+                </div>
+                <div class="skills">
+                    <div class="card">
+                        <h3>Languages</h3>
+                        <ul class="skill-list">
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>C</li>
+                            <li>DBMS</li>
+                            <li>HTML</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Tools / Platforms</h3>
+                        <ul class="skill-list">
+                            <li>VS Code</li>
+                            <li>TryHackMe</li>
+                            <li>HackerBox</li>
+                            <li>CodeTantra</li>
+                            <li>CompTIA</li>
+                            <li>Cisco</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li>Problem Solving</li>
+                            <li>Team Player</li>
+                            <li>Project Management</li>
+                            <li>Adaptability</li>
+                            <li>Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <div class="section-title"><small>PROJECTS</small>
+                    <h2>Featured work</h2>
+                </div>
+                <div class="projects">
+                    <article class="card project">
+                        <h3>Network Vulnerability Scanner & Security Analyzer</h3>
+                        <div class="tag">Python • Nmap • Linux</div>
+                        <p>Authorized network security assessment project.</p>
+                        <ul>
+                            <li>Scans hosts for open TCP ports</li>
+                            <li>Identifies running services</li>
+                            <li>Classifies basic security risks</li>
+                            <li>Generates structured reports</li>
+                        </ul>
+                    </article>
+                    <article class="card project">
+                        <h3>Edutech for Students</h3>
+                        <div class="tag">Python • HTML • ML • Flask</div>
+                        <p>A web platform designed to support freshers with academic guidance and mentorship from
+                            seniors.</p>
+                        <ul>
+                            <li>ML-based recommendations</li>
+                            <li>Flask web application</li>
+                            <li>Interactive HTML interface</li>
+                        </ul>
+                    </article>
+                    <article class="card project">
+                        <h3>Hydroponic Plant Monitoring</h3>
+                        <div class="tag">Tableau • MS SQL Server • HTML • AI</div>
+                        <p>Smart plant monitoring concept focused on growth analysis and AI-assisted disease detection.
+                        </p>
+                        <ul>
+                            <li>Plant growth monitoring</li>
+                            <li>Disease detection concept</li>
+                            <li>Data analytics and visualization</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="dark">
+            <div class="container">
+                <div class="section-title"><small>VERIFIED CREDENTIALS</small>
+                    <h2>Certifications & Accomplishments</h2>
+                </div>
+
+                <div class="featured-certs">
+                    <!-- Featured Certificate 1: Ethical Hacker -->
+                    <div class="cert-card-featured">
+                        <div class="cert-image-wrap"
+                            onclick="openCertModal('cert_ethical_hacker-1.png', 'Ethical Hacker Certificate — Cisco Networking Academy', 'Ethical_Hacker_certificate_nunnadharmateja07-gmail-com_a5645dcc-6fcb-45cc-a38c-082c4f58412f.pdf')">
+                            <img src="cert_ethical_hacker-1.png"
+                                alt="Ethical Hacker Certificate - Cisco Networking Academy" loading="lazy">
+                            <div class="cert-overlay">
+                                <button class="btn-preview" type="button">
+                                    🔍 Preview Certificate
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-header">
+                                <span class="cert-issuer">Cisco Networking Academy</span>
+                                <span class="cert-date">Feb 03, 2026</span>
+                            </div>
+                            <h3>Ethical Hacker</h3>
+                            <p class="cert-desc">Issued upon successful completion of the Ethical Hacker course offered
+                                by Cisco Networking Academy, covering core ethical hacking principles, network
+                                vulnerability assessment, penetration testing fundamentals, and security protocols.</p>
+                            <div class="cert-tags">
+                                <span class="badge">Ethical Hacking</span>
+                                <span class="badge">Network Security</span>
+                                <span class="badge">Vulnerability Scanning</span>
+                                <span class="badge">Cisco Verified</span>
+                            </div>
+                            <div class="cert-actions">
+                                <button class="btn btn-sm primary" type="button"
+                                    onclick="openCertModal('cert_ethical_hacker-1.png', 'Ethical Hacker Certificate — Cisco Networking Academy', 'Ethical_Hacker_certificate_nunnadharmateja07-gmail-com_a5645dcc-6fcb-45cc-a38c-082c4f58412f.pdf')">
+                                    👁️ Preview
+                                </button>
+                                <a href="Ethical_Hacker_certificate_nunnadharmateja07-gmail-com_a5645dcc-6fcb-45cc-a38c-082c4f58412f.pdf"
+                                    target="_blank" class="btn btn-sm">
+                                    📄 View PDF ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Certificate 2: Programming with Python -->
+                    <div class="cert-card-featured">
+                        <div class="cert-image-wrap"
+                            onclick="openCertModal('cert_cisco_internship-1.png', 'Programming with Python Certificate — BDPS / NSDC Skill India', 'CAN_37482737-ejxyjbq8fks42wfe.pdf')">
+                            <img src="cert_cisco_internship-1.png"
+                                alt="Programming with Python Certificate - BDPS & NSDC Skill India" loading="lazy">
+                            <div class="cert-overlay">
+                                <button class="btn-preview" type="button">
+                                    🔍 Preview Certificate
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-header">
+                                <span class="cert-issuer">BDPS • Skill India • NSDC</span>
+                                <span class="cert-date">Jul 15, 2025</span>
+                            </div>
+                            <h3>Programming with Python</h3>
+                            <p class="cert-desc">Awarded Grade B+ for completing the Programming with Python course from
+                                Bhavya Development Processing Solutions Private Limited in association with NSDC & Skill
+                                India. Student ID: CAN_37482737.</p>
+                            <div class="cert-tags">
+                                <span class="badge">Python</span>
+                                <span class="badge">Grade B+</span>
+                                <span class="badge">NSDC / Skill India</span>
+                                <span class="badge">ID: CERT_3094556</span>
+                            </div>
+                            <div class="cert-actions">
+                                <button class="btn btn-sm primary" type="button"
+                                    onclick="openCertModal('cert_cisco_internship-1.png', 'Programming with Python Certificate — BDPS / NSDC Skill India', 'CAN_37482737-ejxyjbq8fks42wfe.pdf')">
+                                    👁️ Preview
+                                </button>
+                                <a href="CAN_37482737-ejxyjbq8fks42wfe.pdf" target="_blank" class="btn btn-sm">
+                                    📄 View PDF ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <div class="section-title"><small>EDUCATION</small>
+                    <h2>Academic journey</h2>
+                </div>
+                <div class="timeline">
+                    <div class="edu"><small>Aug 2026 – Present</small>
+                        <h3>Lovely Professional University</h3>
+                        <p>B.Tech — Computer Science and Engineering</p><b>CGPA: 8.64</b>
+                    </div>
+                    <div class="edu"><small>Mar 2023 – May 2025</small>
+                        <h3>Sri Chaitanya Jr College, Vijayawada</h3>
+                        <p>Intermediate — PCM</p><b>Percentage: 90%</b>
+                    </div>
+                    <div class="edu"><small>Mar 2022 – May 2023</small>
+                        <h3>Viswabharathi High School, Gudivada</h3>
+                        <p>Matriculation</p><b>Percentage: 91.2%</b>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-box">
+                    <div>
+                        <h2>Contact Me</h2>
+                        <p>Have a project, internship or opportunity? Feel free to connect.</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:nunnadharmateja07@gmail.com">✉ nunnadharmateja07@gmail.com</a>
+                        <a href="tel:+919963071983">☎ +91 99630 71983</a>
+                        <a href="https://github.com/dharma1413" target="_blank">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/dharma-teja-nunna/" target="_blank">LinkedIn ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>© 2026 Dharma Teja Nunna • Cybersecurity Portfolio</footer>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="certModal" class="modal" onclick="closeCertModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="modalTitle">Certificate Preview</h3>
+                <button class="modal-close" type="button" onclick="closeCertModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="Certificate Large Preview">
+            </div>
+            <div class="modal-footer">
+                <a id="modalPdfLink" href="" target="_blank" class="btn primary">
+                    📥 Open Full PDF Document
+                </a>
+                <button class="btn" type="button" onclick="closeCertModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadCV(e) {
+            e.preventDefault();
+            fetch('cvdharma.pdf')
+                .then(response => {
+                    if (!response.ok) throw new Error('Network error');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = 'cvdharma.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    setTimeout(() => window.URL.revokeObjectURL(blobUrl), 100);
+                })
+                .catch(err => {
+                    console.error('Download fallback:', err);
+                    const fallbackLink = document.createElement('a');
+                    fallbackLink.href = 'cvdharma.pdf';
+                    fallbackLink.download = 'cvdharma.pdf';
+                    fallbackLink.click();
+                });
+        }
+
+        function openCertModal(imgSrc, title, pdfSrc) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalPdfLink').href = pdfSrc;
+            const modal = document.getElementById('certModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal(e) {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeCertModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
